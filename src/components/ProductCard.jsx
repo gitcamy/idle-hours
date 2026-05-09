@@ -4,7 +4,13 @@ export default function ProductCard({ product, onOpen, onAdd }) {
   return (
     <div className="product-card" onClick={() => onOpen(product)}>
       <div className="product-card-img">
-        <ProductImage id={product.id} colors={product.colors} cat={product.cat} />
+        <ProductImage
+          id={product.id}
+          colors={product.colors}
+          cat={product.cat}
+          src={product.image}
+          alt={product.name}
+        />
         <div className="product-card-overlay">
           <button className="overlay-btn" onClick={e => { e.stopPropagation(); onAdd(product) }}>
             Quick Add

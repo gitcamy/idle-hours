@@ -33,7 +33,13 @@ export default function CartPage({ cart, setCart, setPage }) {
           {cart.map((item, i) => (
             <div key={`${item.id}-${item.size}-${i}`} className="cart-item">
               <div className="cart-item-thumb">
-                <ProductImage id={item.id} colors={item.colors} cat={item.cat} />
+                <ProductImage
+                  id={item.id}
+                  colors={item.colors}
+                  cat={item.cat}
+                  src={item.image}
+                  alt={item.name}
+                />
               </div>
               <div>
                 <div className="cart-item-name">{item.name}</div>

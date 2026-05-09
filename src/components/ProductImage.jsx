@@ -1,9 +1,20 @@
-export default function ProductImage({ id, colors, cat, large = false }) {
+export default function ProductImage({ id, colors, cat, src, alt, large = false }) {
   const [c1, c2] = colors
   const pid = `p${id}`
   const w = 300
   const h = large ? 500 : 380
   const catLabel = cat.toUpperCase()
+
+  if (src) {
+    return (
+      <img
+        src={src}
+        alt={alt || cat}
+        loading="lazy"
+        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+      />
+    )
+  }
 
   return (
     <svg viewBox={`0 0 ${w} ${h}`} xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">

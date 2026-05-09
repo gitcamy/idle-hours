@@ -48,7 +48,7 @@ nav {
 }
 nav.light { color: var(--ink); }
 nav.dark  { color: var(--parchment); }
-.nav-links { display: flex; gap: 36px; font-size: 11.5px; letter-spacing: .18em; text-transform: uppercase; }
+.nav-links { flex: 1; display: flex; gap: 36px; font-size: 11.5px; letter-spacing: .18em; text-transform: uppercase; }
 .nav-logo {
   font-family: 'Morello', cursive;
   font-size: 28px;
@@ -65,7 +65,7 @@ nav.dark  { color: var(--parchment); }
   color: inherit; cursor: pointer; transition: opacity .2s;
 }
 .nav-link:hover { opacity: .5; }
-.nav-right { display: flex; gap: 36px; align-items: center; }
+.nav-right { flex: 1; display: flex; gap: 36px; align-items: center; justify-content: flex-end; }
 
 .page-enter { animation: fadeUp .55s ease both; }
 

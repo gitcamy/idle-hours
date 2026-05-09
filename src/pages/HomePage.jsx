@@ -6,13 +6,15 @@ import Footer from '../components/Footer'
 
 export default function HomePage({ setPage, products, onOpen, onAdd }) {
   const featured = products.slice(0, 3)
+  const reverie = products.find(p => p.id === 1)
+  const shore = products.find(p => p.id === 7)
 
   return (
     <div className="page-enter">
       <div className="hero" style={{ position: 'relative' }}>
         <video
           autoPlay muted loop playsInline
-          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0, opacity: .45 }}
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0, opacity: .55 }}
         >
           <source src="hero-video.mp4" type="video/mp4" />
         </video>
@@ -37,7 +39,14 @@ export default function HomePage({ setPage, products, onOpen, onAdd }) {
 
       <div className="editorial">
         <div className="editorial-img">
-          <ProductImage id={1} colors={['#e8dcd0', '#c9b8a8']} cat="Slips" large />
+          <ProductImage
+            id={1}
+            colors={['#e8dcd0', '#c9b8a8']}
+            cat="Slips"
+            src={reverie?.image}
+            alt={reverie?.name || 'Slips'}
+            large
+          />
         </div>
         <div className="editorial-text">
           <div className="editorial-label">The Philosophy</div>
@@ -75,7 +84,14 @@ export default function HomePage({ setPage, products, onOpen, onAdd }) {
 
       <div className="editorial" style={{ direction: 'rtl' }}>
         <div style={{ direction: 'ltr' }} className="editorial-img">
-          <ProductImage id={7} colors={['#81A9E7', '#6090d0']} cat="Swim" large />
+          <ProductImage
+            id={7}
+            colors={['#81A9E7', '#6090d0']}
+            cat="Swim"
+            src={shore?.image}
+            alt={shore?.name || 'Swim'}
+            large
+          />
         </div>
         <div style={{ direction: 'ltr', background: C.cream }} className="editorial-text">
           <div className="editorial-label">Swim</div>

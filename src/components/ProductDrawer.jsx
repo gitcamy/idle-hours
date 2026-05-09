@@ -23,7 +23,14 @@ export default function ProductDrawer({ product, onClose, onAdd }) {
           ×
         </button>
         <div className="drawer-img">
-          <ProductImage id={product.id} colors={product.colors} cat={product.cat} large />
+          <ProductImage
+            id={product.id}
+            colors={product.colors}
+            cat={product.cat}
+            src={product.image}
+            alt={product.name}
+            large
+          />
         </div>
         <div className="drawer-body">
           <div className="drawer-cat">{product.cat}</div>
